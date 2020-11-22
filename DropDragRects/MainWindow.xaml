@@ -26,7 +26,8 @@
         <Button
             x:Name="ResetTarget"
             Grid.Row="2"
-            Grid.ColumnSpan="4"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
             FontSize="30"
             FontWeight="Bold"
             Click="ResetTarget_Click">
