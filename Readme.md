@@ -1,7 +1,7 @@
 # DropDragRects
 
 
-[Image of Drag and Drop Application](KevinDyke.github.com/DropDragRects/Images/DragDropRects.png)
+![Image of Drag and Drop Application](https://github.com/KevinDyke/DragDropRects/tree/main/Images)
 
 
 
