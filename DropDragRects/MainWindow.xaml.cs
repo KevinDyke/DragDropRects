@@ -36,13 +36,11 @@ namespace DropDragRects
 		{
 			SolidColorBrush scb = (SolidColorBrush)e.Data.GetData(typeof(SolidColorBrush));
 			Target.Fill = scb;
-
-			Rectangle sender_count = sender as Rectangle;
 		}
 
-		private void TextRectangleUserControl_Loaded(object sender, RoutedEventArgs e)
+		private void ResetTarget_Click(object sender, RoutedEventArgs e)
 		{
-
+			Target.Fill = Brushes.Black;
 		}
 	}
 }
