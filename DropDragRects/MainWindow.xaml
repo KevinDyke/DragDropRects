@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:DropDragRects.UserControls"
         mc:Ignorable="d"
         Title="Drag and Drop Rectangles" Height="273" Width="525" ResizeMode="CanResizeWithGrip" >
 
@@ -44,28 +45,31 @@
                    AllowDrop="True"
                    DragEnter="Target_Drop"/>
 
-        <Rectangle x:Name="BottomLeft"
-                   Grid.Row="1"
-                   Stroke="Black"
-                   Fill="Blue"
-                   MouseLeftButtonDown="MouseLeftButtonDown"/>
-        <Rectangle x:Name="TopLeft"
-                   Grid.Row="0"
-                   Stroke="Black"
-                   Fill="Yellow"
-                   MouseLeftButtonDown="MouseLeftButtonDown"/>
+        <uc:RectTextUserControl x:Name="BottomLeft"
+            Grid.Row="1"
+            Count="0"
+            TextColour="White"
+            RectColour="Yellow"
+            MouseLeftButtonDown="MouseLeftButtonDown"/>
 
-        <Rectangle x:Name="BottomRight"
+        <uc:RectTextUserControl x:Name="TopLeft" 
+            Count="0"
+            TextColour="White"
+            RectColour="Blue"
+            MouseLeftButtonDown="MouseLeftButtonDown"/>
+
+        <uc:RectTextUserControl x:Name="BottomRight"
                    Grid.Row="1"
                    Grid.Column="3"
-                   Stroke="Black"
-                   Fill="Red"
+                   Count="0"             
+                   RectColour="Red"
+                   TextColour="White"
                    MouseLeftButtonDown="MouseLeftButtonDown"/>
-        <Rectangle x:Name="TopRight"
-                   Grid.Row="0"
+        <uc:RectTextUserControl x:Name="TopRight"
                    Grid.Column="3"
-                   Stroke="Black"
-                   Fill="Green"
+                   Count="0"
+                   RectColour="Green"
+                   TextColour="White"
                    MouseLeftButtonDown="MouseLeftButtonDown"/>
     </Grid>
 </Window>

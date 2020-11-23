@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DropDragRects.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,15 +26,30 @@ namespace DropDragRects
 			InitializeComponent();
 		}
 
+		private RectTextUserControl _rectText;
+
+		public RectTextUserControl RectText
+		{
+			get { return _rectText; }
+			set { _rectText = value; }
+		}
+
 		private new void MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
-			Rectangle rect = sender as Rectangle;
-			DataObject dataObj = new DataObject(rect.Fill);
-			DragDrop.DoDragDrop(rect, dataObj, DragDropEffects.Move);
+			RectText = sender as RectTextUserControl;
+
+			RectTextUserControl rectText = sender as RectTextUserControl;
+			DataObject dataObj = new DataObject(rectText.RectColour);
+			DragDrop.DoDragDrop(rectText, dataObj, DragDropEffects.Move);
 		}
 
 		private void Target_Drop(object sender, DragEventArgs e)
 		{
+			RectTextUserControl rt = RectText;
+			int count = Int32.Parse(rt.Count);
+			count++;
+			rt.Count = count.ToString();
+
 			SolidColorBrush scb = (SolidColorBrush)e.Data.GetData(typeof(SolidColorBrush));
 			Target.Fill = scb;
 		}
@@ -42,5 +58,7 @@ namespace DropDragRects
 		{
 			Target.Fill = Brushes.Black;
 		}
+
+		
 	}
 }
