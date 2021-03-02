@@ -10,4 +10,4 @@ DropDragRects is a small demonstration of drag and drop in WPF. The central rect
 
 The button resets the cental rectangle to black.
 
-Based on the application WPF Simple drag and drop operation (c#) by TheZara101 on youtube.
+Based on the application WPF Simple drag and drop operation (c#) by TheZaza101 on youtube.
